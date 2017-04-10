@@ -48,14 +48,54 @@ print ('\n'
        '==================\n')
 
 for n in range (iCounter):
-    print('Ilha %s:' %(islands[n][0]))
+    print('Quadrante de terra %s:' %(islands[n][0]))
     for m in range (iCounter):
+        #fatherless = 0
         #print ('compara %s com %s' %(islands[n], islands[m]))
-        if islands[n][1] == islands[m][1] and islands[n][2]+1 == islands[m][2]:
-            print ('- tem vizinho a direita')
         if islands[n][1] == islands[m][1] and islands[n][2]-1 == islands[m][2]:
             print ('- tem vizinho a esquerda')
-        if islands[n][2] == islands[m][2] and islands[n][1]+1 == islands[m][1]:
-            print ('- tem vizinho a baixo')
+            if islands[n][3] == 0:
+                islands[n][3] = islands[m][3]
+        #else:
+        #    fatherless = 1
+        if islands[n][1] == islands[m][1] and islands[n][2]+1 == islands[m][2]:
+            print ('- tem vizinho a direita')
+            if islands[m][3] == 0:
+                islands[m][3] = islands[n][3]
         if islands[n][2] == islands[m][2] and islands[n][1]-1 == islands[m][1]:
             print ('- tem vizinho a cima')
+        #    fatherless = 0
+            if islands[n][3] == 0:
+                islands[n][3] = islands[m][3]
+        #else:
+        #    fatherless = 1
+        if islands[n][2] == islands[m][2] and islands[n][1]+1 == islands[m][1]:
+            print ('- tem vizinho a baixo')
+            if islands[m][3] == 0:
+                islands[m][3] = islands[n][3]
+        #if fatherless == 1:
+        #    iReference += 1
+        #    islands[n][3] = iReference
+
+### Finding islands
+print ('\n'
+       '==================\n'
+       ' ILHAS\n'
+       '==================\n')
+
+landmass = []
+for n in range (iCounter):
+    island = []
+    if islands[n][3] == 0:
+        island.append([islands[n][0], 1])
+        if islands[n][1] == islands[m][1] and islands[n][2]-1 == islands[m][2] and :
+            print ('- tem vizinho a esquerda')
+            island.append([islands[n][0], 0)
+        if islands[n][1] == islands[m][1] and islands[n][2]+1 == islands[m][2]:
+            print ('- tem vizinho a direita')
+
+        if islands[n][2] == islands[m][2] and islands[n][1]-1 == islands[m][1]:
+            print ('- tem vizinho a cima')
+
+        if islands[n][2] == islands[m][2] and islands[n][1]+1 == islands[m][1]:
+            print ('- tem vizinho a baixo')
