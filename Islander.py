@@ -88,14 +88,11 @@ for n in range (iCounter):
     island = []
     if islands[n][3] == 0:
         island.append([islands[n][0], 1])
-        if islands[n][1] == islands[m][1] and islands[n][2]-1 == islands[m][2] and :
+        if islands[n][1] == islands[m][1] and islands[n][2]-1 == islands[m][2]:
             print ('- tem vizinho a esquerda')
-            island.append([islands[n][0], 0)
         if islands[n][1] == islands[m][1] and islands[n][2]+1 == islands[m][2]:
             print ('- tem vizinho a direita')
-
         if islands[n][2] == islands[m][2] and islands[n][1]-1 == islands[m][1]:
             print ('- tem vizinho a cima')
-
         if islands[n][2] == islands[m][2] and islands[n][1]+1 == islands[m][1]:
             print ('- tem vizinho a baixo')
