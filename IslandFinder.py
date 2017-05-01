@@ -33,4 +33,4 @@ def coordinatePrinter(sortedCoordinates): # Prints the groups of coordinates tha
             print(' x %s   y %s' % (tile[1], tile[2]))
 
 with open('TestFile.txt') as inputFile: # Opens the defined file to execute the nested code and than closes it.
-    print(coordinatePrinter(matrixAdvancedSweeper(*matrixReader(inputFile))))
+    coordinatePrinter(matrixAdvancedSweeper(*matrixReader(inputFile)))
